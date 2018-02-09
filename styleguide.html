@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
 
-    <title>Living Styleguide</title>
+    <title>Living Style guide</title>
 
     <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
     <header>
-        <h1>Styleguide</h1>
+        <h1>Style guide</h1>
     </header>
 
     <nav>
@@ -43,7 +43,7 @@
                     <h1>HTML5 accessibility, are block links hurting accessibility?</h1>
                 
                     <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by</p>
-                    <a href="#">Lees meer</a>
+                    <a href="#">Read more</a>
                 </div>
             </article>            
         </section>
@@ -73,53 +73,39 @@
 
         <section>
             <div>
+                <h1>Chat with John</h1>
                 <ol>
                     <li>
-
-                        <p>
-                            Hey!
-                        </p>
-
+                        <p>Hey!</p>
                         <footer>
-                            <p>Posted on <time datatime="2015-01-22T10:25">10:25 AM</time> by you</p>
-                            <p data-status="READ">Has been read</p>
+                            <p><time datatime="2015-01-22T10:25">10:25 AM</time> (<span data-status="READ">read</span>)</p>
                         </footer>
-
                     </li>
+
                     <li>
-
-                        <p>
-                            Hey! Sorry I was busy
-                        </p>
-
+                        <p>Hey! Sorry I was busy</p>
                         <footer>
-                            <p>Posted on <time datatime="2017-02-03T14:19">2:19 PM</time> by John</p>
+                            <p><time datatime="2017-02-03T14:19">2:19 PM</time></p>
                         </footer>
-
                     </li>
+
                     <li>
-
-                        <p>
-                            I sent that 2 years ago
-                        </p>
-
+                        <p>I sent that 2 years ago</p>
                         <footer>
-                            <p>Posted on <time datatime="2017-02-03T14:22">2:22 PM</time> by you</p>
-                            <p data-status="DELIVERED">Has been delivered</p>
+                            <p><time datatime="2017-02-03T14:22">2:22 PM</time> (<span data-status="DELIVERED">delivered</span>)</p>
                         </footer>
-
                     </li>
                 </ol>
 
                 <form action="/" method="post">
-
                     <label for="field-message">Message</label>
-                    <textarea name="field-message" id="field-message"></textarea>
+                    <textarea name="field-message" id="field-message" placeholder="Message"></textarea>
 
                     <button type="submit">Send</button>
 
                 </form>
             </div>
+
             <h1>Rating</h1>
         </section>
 
