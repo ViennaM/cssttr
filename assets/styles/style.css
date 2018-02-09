@@ -116,6 +116,33 @@ body > nav:first-of-type ul li p {
     color: var(--grey);
 }
 
+body > dialog {
+    display: none;
+    background: transparent;
+}
+
+body > dialog:target {
+    position: fixed;
+    display: grid;
+    place-items: center center;
+    height: 100%;
+    width: 100%;
+}
+
+body > dialog > a {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+body > dialog > div {
+    padding: 3em;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,.8);
+}
+
 main {
     font-family: 'Rubik', sans-serif;
     display: grid;
