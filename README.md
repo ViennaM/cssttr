@@ -8,8 +8,10 @@ Week 1: [https://viennam.github.io/cssttr/week1/](https://viennam.github.io/csst
 - [ ] Picture module stylen
 - [ ] Rating module stylen
 - [ ] Responsive maken
-- [ ] Fix navigatie padding
+- [ ] Navigatie padding fixen
 - [ ] CSS secrets toevoegen
+- [ ] Focus states toevoegen
+- [ ] Pagina per module aanmaken
 
 ## HTML aanpassingen
 
