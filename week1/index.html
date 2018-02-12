@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Living Style guide</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header>
+        <h1>Style guide</h1>
+    </header>
+
+    <nav>
+        <h1>Main navigation</h1>
+        <ul>
+            <li><a href="styleguide.html" aria-label="Home, current page">Home</a></li>
+            <li>
+                <p>Components</p>
+                <ul>
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="log-in.html">Log in</a></li>
+                    <li><a href="media-item.html">Media item</a></li>
+                    <li><a href="picture.html">Picture</a></li>
+                    <li><a href="rating.html">Rating</a></li>
+                    <li><a href="step-indicator.html">Step indicator</a></li>
+                </ul>
+            </li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul> 
+    </nav>
+
+    <main>
+        <section>
+            <article>
+                <img src="https://vasilis.nl/voto/fotos/klein/170814161444-komkommersalade-1600.jpg" alt="Komkommersalade" />
+                <div>
+                    <h1>HTML5 accessibility, are block links hurting accessibility?</h1>
+                
+                    <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by</p>
+                    <a href="#">Read more</a>
+                </div>
+            </article>            
+        </section>
+
+        <section>
+            <div>
+                <nav>
+                    <h1>Finish your order</h1>
+                    <progress value="0.66" max="1">25%</progress>
+                    <ol>
+                        <li>
+                            <a href="/cart">Cart</a>
+                        </li>
+                        <li>
+                            <a href="/address">Address</a>
+                        </li>
+                        <li>
+                            <a href="" aria-label="current">Payment</a>
+                        </li>
+                        <li>
+                            Confirm
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h1>Chat with John</h1>
+                <ol>
+                    <li>
+                        <p>Hey!</p>
+                        <footer>
+                            <p><time datatime="2015-01-22T10:25">10:25 AM</time> (<span data-status="READ">read</span>)</p>
+                        </footer>
+                    </li>
+
+                    <li>
+                        <p>Hey! Sorry I was busy</p>
+                        <footer>
+                            <p><time datatime="2017-02-03T14:19">2:19 PM</time></p>
+                        </footer>
+                    </li>
+
+                    <li>
+                        <p>I sent that 2 years ago</p>
+                        <footer>
+                            <p><time datatime="2017-02-03T14:22">2:22 PM</time> (<span data-status="DELIVERED">delivered</span>)</p>
+                        </footer>
+                    </li>
+                </ol>
+
+                <form action="/" method="post">
+                    <label for="field-message">Message</label>
+                    <textarea name="field-message" id="field-message" placeholder="Message"></textarea>
+
+                    <button type="submit">Send</button>
+
+                </form>
+            </div>
+
+            <h1>Rating</h1>
+        </section>
+
+        <section>
+            <h1>Log in</h1>
+            <h1>Picture</h1>
+        </section>
+    </main>
+
+</body>
+</html>
