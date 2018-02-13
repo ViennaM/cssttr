@@ -110,7 +110,28 @@
         </section>
 
         <section>
-            <h1>Log in</h1>
+            <div>
+                <h1>Log in</h1>
+                <form action="/" method="post">
+
+                    <label for="field-email">Email</label>
+                    <input type="email" id="field-email" name="field-email" autocomplete="email" placeholder="john@doe.com" required>
+                
+                    <label for="field-password">Password</label>
+                    <input type="password" id="field-password" name="field-password" placeholder="Password" required>
+                    
+                    <span>
+                      <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+                      <label for="field-stay-logged-in">Stay logged in</label>
+                    </span>
+                
+                    <a href="/">Forgot password</a>
+                
+                    <button type="submit">Login</button>
+                
+                </form>
+                
+            </div>
             <h1>Picture</h1>
         </section>
     </main>
@@ -119,6 +140,7 @@
         <div>
             <h1>CSS To The Rescue</h1>
             <a href="https://github.com/ViennaM/cssttr" target="_blank">Github repo</a>
+            <a href="#">Close modal</a>
         </div>
       </dialog>
 
