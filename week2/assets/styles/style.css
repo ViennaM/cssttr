@@ -38,7 +38,7 @@ body {
 }
 
 h1 {
-    font-family: Ampersand, 'Lato', sans-serif;
+    font-family: 'Rubik', sans-serif;
     color: var(--darkest-grey);
     font-weight: 500;
     font-size: 1.5em;
@@ -56,6 +56,7 @@ header, body > nav:first-of-type {
 header h1 {
     color: var(--blue);
     font-size: 1.6em;
+    font-family: Ampersand, 'Lato', sans-serif;
 }
 
 header {
@@ -63,6 +64,14 @@ header {
   background: #fff;
   padding: 0 1.5em;
   width: 100%;
+}
+
+nav > a {
+    opacity: 0;
+}
+
+nav a:focus {
+    opacity: 1;
 }
 
 /* MODULE: Navigatie */
@@ -95,7 +104,7 @@ ul li a {
     display: block;
 }
 
-ul li a:hover {
+ul li a:hover, ul li a:focus {
     color: var(--blue);
 }
 
@@ -108,11 +117,21 @@ ul ul li {
     padding: .5em 1em;
 }
 
-body > nav:first-of-type > ul > li:first-child {
+body > nav:first-of-type > ul > li:nth-child(1) a {
+    opacity: 0;
+    margin-top: -1em;
+    text-decoration: underline;
+} 
+
+body > nav:first-of-type > ul > li:nth-child(1) a:focus {
+    opacity: 1;
+} 
+
+body > nav:first-of-type > ul > li:nth-child(2) {
     background: #fff;
 }
 
-body > nav:first-of-type > ul > li:first-child a {
+body > nav:first-of-type > ul > li:nth-child(2) a {
     color: var(--blue);
 }
 
@@ -197,8 +216,9 @@ form button{
     padding: .5em 1em;
 }
 
-button:hover {
+button:hover, button:focus {
     background: var(--light-blue);
+    outline: none;
 }
 
 /* MODULE: Media item */
@@ -238,8 +258,10 @@ div form a {
 }
 
 article div a:hover,
-div form a:hover {
+div form a:hover,
+a:focus {
     text-decoration: underline;
+    outline: none;
 }
 
 /* MODULE: Step indicator */
@@ -353,7 +375,7 @@ section:nth-child(3) div form label {
     display: none;
 }
 
-section:nth-child(3) div form textarea {
+textarea {
     background: transparent;
     border: none;
     font-size: 1em;
@@ -392,7 +414,7 @@ input:not([type="checkbox"]) {
     transition: .2s;
 }
 
-input:not([type="checkbox"]):focus {
+input:not([type="checkbox"]):focus, textarea:focus {
     outline: none;
     padding-left: 1.3em;
     color: var(--darkest-grey);
@@ -414,3 +436,4 @@ div form span {
 label:hover, button:hover {
     cursor: pointer;
 }
+
