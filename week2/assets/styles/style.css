@@ -113,6 +113,7 @@ ul li a:hover,
 ul li a:focus {
   color: var(--blue);
   box-shadow: 0 0 0 2px var(--subtle-grey);
+  background: #fff;
 }
 
 ul li {
@@ -152,6 +153,7 @@ ul li p {
 dialog {
   display: none;
   background: transparent;
+  z-index: 99999;
 }
 
 dialog:target {
@@ -174,8 +176,8 @@ dialog div {
   border-radius: 10px;
   background: #fff;
   box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .8);
-  width: 35em;
-  max-width: 90%;
+  max-width: 35em;
+  width: 90%;
 }
 
 /* Main */
@@ -382,7 +384,8 @@ section:nth-child(3) div:nth-child(1) form {
   background: var(--subtle-grey);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 .5em;
 }
 
 section:nth-child(3) div:nth-child(1) form label {
@@ -620,7 +623,7 @@ header a::before {
     0 16px 0 0  var(--grey);
 }
 
-header a:focus::before {
+header a:focus::before, header a:hover::before {
   background: var(--blue);
   box-shadow: 
     0 8px 0 0  var(--blue),
@@ -660,4 +663,36 @@ header a:focus::before {
     padding: 0;
     margin: 6em auto 2em;
   }
+  body>nav:first-of-type>a {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 40em) {
+  main {
+    grid-template-columns: 1fr;
+    max-width: 24em;
+  }
+  main section:nth-child(1), main section:nth-child(2) {
+    grid-column: auto;
+  }
+  section:first-of-type article img {
+    position: relative;
+    width: 100%;
+    top: -55px;
+    transform: unset;
+    margin-bottom: -100px;
+  }
+  article div {
+    width: auto;
+    background: #fff;
+  }
+}
+
+@media (max-width: 20em) {
+
 }
