@@ -97,7 +97,7 @@ body>nav ul {
 }
 
 nav ul ul {
-  padding: 0;
+  padding: 0 0 1em;
 }
 
 ul,
@@ -105,26 +105,28 @@ ul li a {
   color: var(--dark-grey);
   text-decoration: none;
   display: block;
+  padding: .5em 2em;
 }
 
 ul li a:hover,
 ul li a:focus {
   color: var(--blue);
+  box-shadow:  0 0 0 2px var(--subtle-grey);
 }
 
 ul li {
-  padding: .5em 2em;
   display: block;
 }
 
-ul ul li {
-  padding: .5em 1em;
+ul ul li a {
+  padding: .5em 3em;
 }
 
 body>nav:first-of-type>ul>li:nth-child(1) a {
   opacity: 0;
   margin-top: -1em;
   text-decoration: underline;
+  cursor: default;
 }
 
 body>nav:first-of-type>ul>li:nth-child(1) a:focus {
@@ -141,6 +143,7 @@ body>nav:first-of-type>ul>li:nth-child(2) a {
 
 ul li p {
   color: var(--grey);
+  padding: 0 2em;
 }
 
 /* CSS Secrets: De-emphasize by dimming (about modal) */
@@ -450,6 +453,38 @@ div form span {
   font-size: .8em;
 }
 
+/* CSS Secrets: Custom checkboxes */
+
+input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+input[type="checkbox"]+label::before {
+  content: '\a0';
+  display: inline-block;
+  vertical-align: .2em;
+  width: 1em;
+  height: 1em;
+  margin-right: .5em;
+  border-radius: 3px;
+  background: var(--subtle-grey);
+  border: 1px solid var(--grey);
+  text-indent: .15em;
+  line-height: 1em;
+}
+
+input[type="checkbox"]:checked+label::before {
+  content: '\2713';
+  background: #fff;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+input[type="checkbox"]:focus+label::before {
+  box-shadow: 0 0 1px #58a;
+}
+
 /* CSS Secrets: Cursor */
 
 label:hover,
@@ -481,7 +516,9 @@ form fieldset legend {
 }
 
 form fieldset input {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 svg {
@@ -496,6 +533,7 @@ svg {
   100% {}
 }
 
+form fieldset input:focus-within + label svg, 
 svg:hover,
 svg:focus {
   transform: scale(2);
