@@ -1,5 +1,3 @@
-
-
 :root {
   --light-grey: #F8F9FA;
   --subtle-grey: #F1F3F5;
@@ -73,6 +71,10 @@ nav>a {
 
 nav a:focus {
   opacity: 1;
+}
+
+img {
+  max-width: 100%;
 }
 
 /* MODULE: Navigatie */
@@ -168,6 +170,8 @@ dialog div {
   border-radius: 10px;
   background: #fff;
   box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .8);
+  width: 35em;
+  max-width: 90%;
 }
 
 /* Main */
@@ -189,7 +193,7 @@ main section:nth-child(2) {
 
 /* Block styling */
 
-article,
+section:first-of-type>article,
 section>div {
   background: #fff;
   border-radius: 10px;
@@ -232,7 +236,7 @@ article div h1 {
   color: var(--darkest-grey);
 }
 
-article img {
+section:first-of-type article img {
   position: absolute;
   width: 45%;
   top: 50%;
@@ -389,6 +393,7 @@ textarea {
   height: 3em;
   resize: none;
   transition: .2s;
+  overflow: hidden;
 }
 
 /* MODULE: Login */
@@ -396,7 +401,7 @@ textarea {
 section:nth-child(4) div form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 0.8rem;
+  grid-gap: 0.8em;
   padding: 1em 0;
 }
 
@@ -428,8 +433,13 @@ textarea:focus {
   transition: .2s;
 }
 
-input[type="email"]:valid {
+input:not([type="checkbox"]):valid {
   color: var(--darkest-grey);
+  box-shadow: inset 2px 0 green;
+}
+
+input:not([type="checkbox"]):focus:invalid {
+  box-shadow: inset 2px 0 var(--grey);
 }
 
 div form a {
@@ -449,12 +459,13 @@ button:hover {
 
 /* MODULE: Rating */
 
-div + div {
+div+div,
+div+article {
   margin-top: 3em;
   min-height: 12em;
 }
 
-form fieldset  {
+form fieldset {
   border: none;
   border-top: 1px solid var(--subtle-grey);
   padding: 2em 0 1em;
@@ -480,24 +491,70 @@ svg {
   animation: hue-rotate 4s infinite;
 }
 
-svg:hover, svg:focus {
+@keyframes hue-rotate {
+  0% {}
+  100% {}
+}
+
+svg:hover,
+svg:focus {
   transform: scale(2);
   transition: .2s;
   margin-bottom: 1em;
 }
 
 form fieldset label {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-form fieldset input:checked + label svg {
+form fieldset input:checked+label svg {
   transform: scale(2);
   margin-bottom: 1em;
 }
 
-@keyframes hue-rotate {
-  0% {}
-  100% {}
+/* MODULE: Picture with title */
+
+section:nth-child(4) article {
+  position: relative;
+}
+
+section:nth-child(4) article h1 {
+  position: absolute;
+  color: #fff;
+  background: linear-gradient(var(--darkest-grey), rgba(0, 0, 0, 0));
+  display: block;
+  width: 100%;
+  padding: 1em 1em 3em;
+  top: -1em;
+  border-radius: 5px;
+}
+
+figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+figure img {
+  border-radius: 5px;
+}
+
+figcaption {
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: .8em;
+}
+
+figcaption p {
+  line-height: 2em;
+}
+
+figcaption a {
+  color: var(--light-blue);
+}
+
+figcaption a:hover {
+  text-decoration: underline;
 }
