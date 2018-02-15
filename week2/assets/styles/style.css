@@ -649,6 +649,7 @@ header a:hover::before {
     height: 100vh;
     z-index: 9999;
     background: var(--light-grey);
+    padding-top: 2em;
   }
   body>nav:target {
     transform: translatex(0);
@@ -661,9 +662,29 @@ header a:hover::before {
   body>nav:first-of-type>a {
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1em;
+    right: 2em;
     opacity: 1;
+  }
+  body>nav:first-of-type>a:before,
+  body>nav:first-of-type>a:after {
+    position: absolute;
+    content: ' ';
+    height: 2em;
+    width: 3px;
+    background-color: var(--darkest-grey);
+  }
+  body>nav:first-of-type>a:hover:before,
+  body>nav:first-of-type>a:hover:after,
+  body>nav:first-of-type>a:focus:before,
+  body>nav:first-of-type>a:focus:after {
+    background-color: var(--blue);
+  }
+  body>nav:first-of-type>a:before {
+    transform: rotate(45deg);
+  }
+  body>nav:first-of-type>a:after {
+    transform: rotate(-45deg);
   }
   body>nav>ul,
   body>nav:first-of-type a {
