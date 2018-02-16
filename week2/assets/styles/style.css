@@ -84,13 +84,13 @@ img {
 
 /* MODULE: Navigation */
 
-body>nav:first-of-type {
+body>nav {
   border-right: 2px solid var(--subtle-grey);
   border-bottom: none;
   min-width: 13em;
 }
 
-body>nav:first-of-type h1 {
+body>nav h1 {
   display: none;
 }
 
@@ -117,6 +117,7 @@ ul li a:focus {
   color: var(--blue);
   box-shadow: 0 0 0 2px var(--subtle-grey);
   background: #fff;
+  transform: scale(1.08);
 }
 
 ul li {
@@ -127,22 +128,22 @@ ul ul li a {
   padding: .5em 3em;
 }
 
-body>nav:first-of-type>ul>li:nth-child(1) a {
+body>nav>ul>li:nth-child(1) a {
   opacity: 0;
   margin-top: -1em;
   text-decoration: underline;
   cursor: default;
 }
 
-body>nav:first-of-type>ul>li:nth-child(1) a:focus {
+body>nav>ul>li:nth-child(1) a:focus {
   opacity: 1;
 }
 
-body>nav:first-of-type>ul>li:nth-child(2) {
+body>nav>ul>li:nth-child(2) {
   background: #fff;
 }
 
-body>nav:first-of-type>ul>li:nth-child(2) a {
+body>nav>ul>li:nth-child(2) a {
   color: var(--blue);
 }
 
@@ -212,6 +213,39 @@ section>div {
   position: relative;
 }
 
+section:first-of-type article {
+  animation: fadeIn 1s forwards;
+}
+section:nth-child(2) {
+  animation: fadeIn 1s forwards;
+  animation-delay: .2s;
+  opacity: 0;
+} 
+
+section:nth-child(3)>div:first-of-type {
+  animation: fadeIn 1s forwards;
+  animation-delay: .4s;
+  opacity: 0;
+}
+
+section:nth-child(4)>div {
+  animation: fadeIn 1s forwards;
+  animation-delay: .5s;
+  opacity: 0;
+}
+
+section:nth-child(3)>div:last-of-type {
+  animation: fadeIn 1s forwards;
+  animation-delay: .6s;
+  opacity: 0;
+}
+
+section:nth-child(4)>article {
+  animation: fadeIn 1s forwards;
+  animation-delay: .7s;
+  opacity: 0;
+}
+
 div h1 {
   text-align: center;
 }
@@ -236,6 +270,7 @@ form button {
 button:hover,
 button:focus {
   background: var(--light-blue);
+  border: 1px solid var(--blue);
   outline: none;
 }
 
@@ -277,10 +312,15 @@ div form a {
 }
 
 article div a:hover,
-div form a:hover,
+div form a:hover {
+  text-decoration: underline;
+  outline: none;
+}
+
 a:focus {
   text-decoration: underline;
   outline: none;
+  font-weight: bold;
 }
 
 /* MODULE: Step indicator */
@@ -291,7 +331,7 @@ div nav {
 }
 
 progress {
-  width: 95%;
+  width: 89%;
   -webkit-appearance: none;
   border: none;
   margin-top: 1em;
@@ -317,6 +357,7 @@ nav ol {
 nav ol li {
   counter-increment: li;
   position: relative;
+  width: 5em;
 }
 
 nav ol li:before {
@@ -533,7 +574,7 @@ svg {
   height: 2em;
   transition: .2s;
   filter: hue-rotate(360deg);
-  animation: hue-rotate 4s infinite;
+  animation: hue-rotate 4s forwards;
 }
 
 @keyframes hue-rotate {
@@ -580,7 +621,6 @@ section:nth-child(4) article h1 {
 figure {
   margin: 0;
   overflow: hidden;
-  border-radius: 5px;
 }
 
 figure img {
@@ -659,42 +699,44 @@ header a:hover::before {
     padding: 0;
     margin: 6em auto 2em;
   }
-  body>nav:first-of-type>a {
+  body>nav>a {
     display: block;
     position: absolute;
     top: 1em;
-    right: 2em;
+    right: 0;
     opacity: 1;
+    width: 2em;
+    height: 2em;
   }
-  body>nav:first-of-type>a:before,
-  body>nav:first-of-type>a:after {
+  body>nav>a:before,
+  body>nav>a:after {
     position: absolute;
     content: ' ';
     height: 2em;
     width: 3px;
     background-color: var(--darkest-grey);
   }
-  body>nav:first-of-type>a:hover:before,
-  body>nav:first-of-type>a:hover:after,
-  body>nav:first-of-type>a:focus:before,
-  body>nav:first-of-type>a:focus:after {
+  body>nav>a:hover:before,
+  body>nav>a:hover:after,
+  body>nav>a:focus:before,
+  body>nav>a:focus:after {
     background-color: var(--blue);
   }
-  body>nav:first-of-type>a:before {
+  body>nav>a:before {
     transform: rotate(45deg);
   }
-  body>nav:first-of-type>a:after {
+  body>nav>a:after {
     transform: rotate(-45deg);
   }
   body>nav>ul,
-  body>nav:first-of-type a {
+  body>nav a {
     display: none;
   }
   body>nav:target>ul,
   body>nav:target:first-of-type a {
     display: block;
   }
-  body>nav:first-of-type>ul>li:nth-child(1) {
+  body>nav>ul>li:nth-child(1) {
     display: none;
   }
 }
@@ -719,6 +761,19 @@ header a:hover::before {
     width: auto;
     background: #fff;
   }
+  div nav {
+    padding: 0;
+  }
+  progress {
+    width: 80%;
+  }
 }
 
-@media (max-width: 20em) {}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
