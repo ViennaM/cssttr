@@ -2,7 +2,7 @@
 
 Week 1: [https://viennam.github.io/cssttr/week1/](https://viennam.github.io/cssttr/week1/)
 
-Week 2: [https://viennam.github.io/cssttr/week2/style.guide.html](https://viennam.github.io/cssttr/week1/styleguide.html)
+Week 2: [https://viennam.github.io/cssttr/week2/style.guide.html](https://viennam.github.io/cssttr/week2/styleguide.html)
 
 ## To do
 
