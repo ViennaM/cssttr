@@ -1,0 +1,779 @@
+:root {
+  --light-grey: #F8F9FA;
+  --subtle-grey: #F1F3F5;
+  --grey: #969696;
+  --dark-grey: #707070;
+  --darkest-grey: #343A40;
+  --blue: #228AE6;
+  --light-blue: #3EA1EE;
+}
+
+/* CSS Secrets: Fancy ampersands */
+
+@font-face {
+  font-family: Ampersand;
+  src: url('../fonts/LibreBaskerville-Italic.otf');
+  unicode-range: U+26;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--light-grey);
+}
+
+body {
+  margin: 0;
+  font-size: 1em;
+  color: var(--grey);
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: 'Rubik', sans-serif;
+  color: var(--dark-grey);
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+header,
+body>nav {
+  font-weight: 700;
+  border-bottom: 2px solid var(--subtle-grey);
+}
+
+header h1 {
+  color: var(--blue);
+  font-size: 1.6em;
+  font-family: Ampersand, 'Lato', sans-serif;
+}
+
+header {
+  grid-column: 1/3;
+  background: #fff;
+  padding: 0 1.5em;
+  width: 100%;
+}
+
+nav>a:first-of-type {
+  display: none;
+}
+
+nav>a {
+  opacity: 0;
+}
+
+nav a:focus {
+  opacity: 1;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* MODULE: Navigation */
+
+body>nav {
+  border-right: 2px solid var(--subtle-grey);
+  border-bottom: none;
+  min-width: 13em;
+}
+
+body>nav h1 {
+  display: none;
+}
+
+body>nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 2em 0;
+}
+
+nav ul ul {
+  padding: 0 0 1em;
+}
+
+ul,
+ul li a {
+  color: var(--dark-grey);
+  text-decoration: none;
+  display: block;
+  padding: .5em 2em;
+}
+
+ul li a:hover,
+ul li a:focus {
+  color: var(--blue);
+  box-shadow: 0 0 0 2px var(--subtle-grey);
+  background: #fff;
+  transform: scale(1.08);
+}
+
+ul li {
+  display: block;
+}
+
+ul ul li a {
+  padding: .5em 3em;
+}
+
+body>nav>ul>li:nth-child(1) a {
+  opacity: 0;
+  margin-top: -1em;
+  text-decoration: underline;
+  cursor: default;
+}
+
+body>nav>ul>li:nth-child(1) a:focus {
+  opacity: 1;
+}
+
+body>nav>ul>li:nth-child(2) {
+  background: #fff;
+}
+
+body>nav>ul>li:nth-child(2) a {
+  color: var(--blue);
+}
+
+ul li p {
+  color: var(--grey);
+  padding: 0 2em;
+}
+
+/* CSS Secrets: De-emphasize by dimming (about modal) */
+
+dialog {
+  display: none;
+  background: transparent;
+  z-index: 99999;
+}
+
+dialog:target {
+  position: fixed;
+  display: grid;
+  place-items: center center;
+  height: 100%;
+  width: 100%;
+}
+
+dialog>a {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+dialog div {
+  padding: 3em;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .8);
+  max-width: 35em;
+  width: 90%;
+}
+
+/* Main */
+
+main {
+  font-family: 'Rubik', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: dense;
+  grid-gap: 3em;
+  padding: 4em 3em;
+  width: 75%;
+  max-width: 50em;
+}
+
+main section:nth-child(1),
+main section:nth-child(2) {
+  grid-column: 1/3
+}
+
+/* Block styling */
+
+section:first-of-type>article,
+section>div {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+  position: relative;
+}
+
+section:first-of-type article {
+  animation: fadeIn 1s forwards;
+}
+section:nth-child(2) {
+  animation: fadeIn 1s forwards;
+  animation-delay: .2s;
+  opacity: 0;
+} 
+
+section:nth-child(3)>div:first-of-type {
+  animation: fadeIn 1s forwards;
+  animation-delay: .4s;
+  opacity: 0;
+}
+
+section:nth-child(4)>div {
+  animation: fadeIn 1s forwards;
+  animation-delay: .5s;
+  opacity: 0;
+}
+
+section:nth-child(3)>div:last-of-type {
+  animation: fadeIn 1s forwards;
+  animation-delay: .6s;
+  opacity: 0;
+}
+
+section:nth-child(4)>article {
+  animation: fadeIn 1s forwards;
+  animation-delay: .7s;
+  opacity: 0;
+}
+
+div h1 {
+  text-align: center;
+}
+
+div>ol,
+main section:nth-child(4) div>form,
+fieldset {
+  width: calc(100% - 2em);
+  margin: 0 auto;
+  border-top: 1px solid var(--subtle-grey);
+}
+
+form button {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  padding: .5em 1em;
+}
+
+button:hover,
+button:focus {
+  background: var(--light-blue);
+  border: 1px solid var(--blue);
+  outline: none;
+}
+
+/* MODULE: Media item */
+
+article div h1 {
+  text-align: left;
+  color: var(--darkest-grey);
+}
+
+section:first-of-type article img {
+  position: absolute;
+  width: 45%;
+  top: 50%;
+  transform: translatey(-50%);
+}
+
+article div {
+  margin-right: auto;
+  position: relative;
+  left: 100%;
+  transform: translatex(-100%);
+  width: 55%;
+  padding: 1em 1em 1.5em 1.5em;
+}
+
+article div p {
+  line-height: 1.75em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+article div a,
+div form a {
+  font-size: .8em;
+  color: var(--light-blue);
+}
+
+article div a:hover,
+div form a:hover {
+  text-decoration: underline;
+  outline: none;
+}
+
+a:focus {
+  text-decoration: underline;
+  outline: none;
+  font-weight: bold;
+}
+
+/* MODULE: Step indicator */
+
+div nav {
+  padding: 0 2em;
+  text-align: center;
+}
+
+progress {
+  width: 89%;
+  -webkit-appearance: none;
+  border: none;
+  margin-top: 1em;
+}
+
+progress::-webkit-progress-bar {
+  background: var(--subtle-grey);
+  height: 8px;
+}
+
+progress::-webkit-progress-value {
+  background: var(--light-blue);
+}
+
+nav ol {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  counter-reset: li;
+  padding: 0;
+}
+
+nav ol li {
+  counter-increment: li;
+  position: relative;
+  width: 4em;
+}
+
+nav ol li:before {
+  content: counter(li);
+  color: #fff;
+  position: absolute;
+  transform: translate(-.8em, -3em);
+  left: 50%;
+  background: var(--light-blue);
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+}
+
+li:nth-child(4):before {
+  background: var(--subtle-grey);
+  color: var(--grey);
+}
+
+nav ol li a {
+  color: var(--dark-grey);
+}
+
+nav ol li a:hover {
+  color: var(--blue);
+}
+
+/* MODULE: Chat */
+
+div ol {
+  list-style: none;
+  padding: 0;
+}
+
+main section:nth-child(3) div ol li {
+  margin: 1em 0;
+}
+
+main section:nth-child(3) div ol li:nth-child(odd) {
+  text-align: right;
+}
+
+div ol li>p {
+  background: var(--subtle-grey);
+  padding: .5em 1em;
+  display: inline-block;
+  color: var(--dark-grey);
+  border-radius: 10px 10px 10px 0;
+  margin-bottom: 0;
+}
+
+div ol li:nth-child(odd)>p {
+  background: var(--blue);
+  color: #fff;
+  border-radius: 10px 10px 0 10px;
+}
+
+footer p {
+  margin: 0;
+  font-size: .8em;
+  color: var(--grey);
+}
+
+/* CSS Secrets: Vertical centering */
+
+section:nth-child(3) div:nth-child(1) form {
+  background: var(--subtle-grey);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 .5em;
+}
+
+section:nth-child(3) div:nth-child(1) form label {
+  display: none;
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  font-size: 1em;
+  padding: 1em;
+  width: 75%;
+  height: 3em;
+  resize: none;
+  transition: .2s;
+  overflow: hidden;
+}
+
+/* MODULE: Login */
+
+section:nth-child(4) div form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.8em;
+  padding: 1em 0;
+}
+
+section:nth-child(4) div form label,
+section:nth-child(4) div form input,
+section:nth-child(4) div form button {
+  grid-column: span 2;
+  font-size: 1em;
+}
+
+section:nth-child(4) div form label {
+  color: var(--dark-grey);
+}
+
+input:not([type="checkbox"]) {
+  background: var(--subtle-grey);
+  border: none;
+  padding: 1em;
+  border-radius: 3px;
+  color: var(--grey);
+  transition: .2s;
+}
+
+input:not([type="checkbox"]):focus,
+textarea:focus {
+  outline: none;
+  padding-left: 1.3em;
+  color: var(--darkest-grey);
+  transition: .2s;
+}
+
+input:not([type="checkbox"]):valid {
+  color: var(--darkest-grey);
+  box-shadow: inset 2px 0 green;
+}
+
+input:not([type="checkbox"]):focus:invalid {
+  box-shadow: inset 2px 0 red;
+}
+
+div form a {
+  text-align: right;
+}
+
+div form span {
+  font-size: .8em;
+}
+
+/* CSS Secrets: Custom checkboxes */
+
+input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+input[type="checkbox"]+label::before {
+  content: '\a0';
+  display: inline-block;
+  vertical-align: .2em;
+  width: 1em;
+  height: 1em;
+  margin-right: .5em;
+  border-radius: 3px;
+  background: var(--subtle-grey);
+  border: 1px solid var(--grey);
+  text-indent: .15em;
+  line-height: 1em;
+}
+
+input[type="checkbox"]:checked+label::before {
+  content: '\2713';
+  background: #fff;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+input[type="checkbox"]:focus+label::before {
+  box-shadow: 0 0 1px #58a;
+}
+
+/* CSS Secrets: Cursor */
+
+label:hover,
+button:hover {
+  cursor: pointer;
+}
+
+/* MODULE: Rating */
+
+div+div,
+div+article {
+  margin-top: 3em;
+  min-height: 12em;
+}
+
+form fieldset {
+  border: none;
+  border-top: 1px solid var(--subtle-grey);
+  padding: 2em 0 1em;
+}
+
+form fieldset div {
+  display: flex;
+  justify-content: space-around;
+}
+
+form fieldset legend {
+  display: none;
+}
+
+form fieldset input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+svg {
+  height: 2em;
+  transition: .2s;
+  filter: hue-rotate(360deg);
+  animation: hue-rotate 4s forwards;
+}
+
+@keyframes hue-rotate {
+  0% {}
+  100% {}
+}
+
+form fieldset input:focus-within+label svg,
+svg:hover,
+svg:focus {
+  transform: scale(2);
+  transition: .2s;
+  margin-bottom: 1em;
+}
+
+form fieldset label {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+form fieldset input:checked+label svg {
+  transform: scale(2);
+  margin-bottom: 1em;
+}
+
+/* MODULE: Picture with title */
+
+section:nth-child(4) article {
+  position: relative;
+}
+
+section:nth-child(4) article h1 {
+  position: absolute;
+  color: #fff;
+  background: linear-gradient(var(--darkest-grey), rgba(0, 0, 0, 0));
+  display: block;
+  width: 100%;
+  padding: 1em 1em 3em;
+  top: -1em;
+  border-radius: 5px;
+}
+
+figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+figure img {
+  border-radius: 5px;
+}
+
+figcaption {
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: .8em;
+}
+
+figcaption p {
+  line-height: 2em;
+}
+
+figcaption a {
+  color: var(--light-blue);
+}
+
+figcaption a:hover {
+  text-decoration: underline;
+}
+
+header a {
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  content: '';
+}
+
+header a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 100%;
+  height: 3px;
+  background: var(--grey);
+  box-shadow: 0 8px 0 0 var(--grey), 0 16px 0 0 var(--grey);
+}
+
+header a:focus::before,
+header a:hover::before {
+  background: var(--blue);
+  box-shadow: 0 8px 0 0 var(--blue), 0 16px 0 0 var(--blue);
+}
+
+@media (max-width: 55em) {
+  header {
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header a {
+    display: block;
+  }
+  body>nav {
+    position: fixed;
+    transform: translatex(100vw);
+    transition: transform .5s;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: var(--light-grey);
+    padding-top: 2em;
+  }
+  body>nav:target {
+    transform: translatex(0);
+  }
+  main {
+    width: 90%;
+    padding: 0;
+    margin: 6em auto 2em;
+  }
+  body>nav>a {
+    display: block;
+    position: absolute;
+    top: 1em;
+    right: 0;
+    opacity: 1;
+    width: 2em;
+    height: 2em;
+  }
+  body>nav>a:before,
+  body>nav>a:after {
+    position: absolute;
+    content: ' ';
+    height: 2em;
+    width: 3px;
+    background-color: var(--darkest-grey);
+  }
+  body>nav>a:hover:before,
+  body>nav>a:hover:after,
+  body>nav>a:focus:before,
+  body>nav>a:focus:after {
+    background-color: var(--blue);
+  }
+  body>nav>a:before {
+    transform: rotate(45deg);
+  }
+  body>nav>a:after {
+    transform: rotate(-45deg);
+  }
+  body>nav>ul,
+  body>nav a {
+    display: none;
+  }
+  body>nav:target>ul,
+  body>nav:target:first-of-type a {
+    display: block;
+  }
+  body>nav>ul>li:nth-child(1) {
+    display: none;
+  }
+}
+
+@media (max-width: 40em) {
+  main {
+    grid-template-columns: 1fr;
+    max-width: 24em;
+  }
+  main section:nth-child(1),
+  main section:nth-child(2) {
+    grid-column: auto;
+  }
+  section:first-of-type article img {
+    position: relative;
+    width: 100%;
+    top: -55px;
+    transform: unset;
+    margin-bottom: -100px;
+  }
+  article div {
+    width: auto;
+    background: #fff;
+  }
+  div nav {
+    padding: 0;
+  }
+  progress {
+    width: 80%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
