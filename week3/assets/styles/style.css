@@ -359,7 +359,7 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background: var(--light-blue);
+  background: var(--blue);
 }
 
 nav ol {
@@ -382,7 +382,7 @@ nav ol li::before {
   position: absolute;
   transform: translate(-.8em, -3em);
   left: 50%;
-  background: var(--light-blue);
+  background: var(--blue);
   border-radius: 100%;
   width: 2em;
   height: 2em;
