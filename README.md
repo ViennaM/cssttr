@@ -4,20 +4,9 @@ Week 1: [https://viennam.github.io/cssttr/week1/](https://viennam.github.io/csst
 
 Week 2: [https://viennam.github.io/cssttr/week2/style.guide.html](https://viennam.github.io/cssttr/week2/styleguide.html)
 
-## To do
+Week 3: [https://viennam.github.io/cssttr/week3/style.guide.html](https://viennam.github.io/cssttr/week3/styleguide.html)
 
-- [ ] Log in module stylen
-- [ ] Picture module stylen
-- [ ] Rating module stylen
-- [ ] Responsive maken
-- [ ] Navigatie padding fixen
-- [ ] CSS secrets toevoegen
-- [ ] Focus states toevoegen
-- [ ] Pagina per module aanmaken
-
-## HTML aanpassingen
-
-- Wrappers toegevoegd aan modules om te kunnen positioneren.
+![Screenshot CSSTTR](cssttr.png)
 
 ## Components
 
